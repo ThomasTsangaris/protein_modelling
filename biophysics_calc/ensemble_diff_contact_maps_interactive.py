@@ -216,8 +216,8 @@ else:
     except:
         n_2 = 10
     print("Loading...")
-    # co = 0.55 #cut off (default 0.45 nm)
-    co = 0.8 # "usually used": doi - 10.1007/978-1-4939-3572-7_24
+    co = 0.45 #cut off (default 0.45 nm)
+    # co = 0.8 # for Calpha, "usually used": doi - 10.1007/978-1-4939-3572-7_24
     # Get contacts for the first ensemble:
     files_1 = glob.glob(path_1 + "*.pdb")
     traj_1 = md.load(files_1, top = files_1[0], stride = 1)
@@ -272,8 +272,8 @@ else:
     S=S.toarray()
     plt.figure()
     #plt.imshow(S, interpolation=None, origin='low',cmap='seismic')
-    plt.xlim([18, 62])
-    plt.ylim([63, 121])
+    # plt.xlim([18, 62])
+    # plt.ylim([63, 121])
     plt.imshow(S, interpolation=None, origin='lower',cmap='seismic',vmin=-0.05,vmax=0.05)
     plt.colorbar()
     plt.xlabel("Residue")
